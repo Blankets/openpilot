@@ -93,6 +93,7 @@ class CAR:
   LEXUS_ESH_TSS2 = "LEXUS ES HYBRID 2019"
   LEXUS_IS = "LEXUS IS 2018"
   LEXUS_IS_TSS2 = "LEXUS IS 2023"
+  LEXUS_IS500_TSS2 = "LEXUS IS500 2023"
   LEXUS_NX = "LEXUS NX 2018"
   LEXUS_NXH = "LEXUS NX HYBRID 2018"
   LEXUS_NX_TSS2 = "LEXUS NX 2020"
@@ -187,6 +188,7 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
   CAR.LEXUS_ESH_TSS2: ToyotaCarInfo("Lexus ES Hybrid 2019-23", video_link="https://youtu.be/BZ29osRVJeg?t=12"),
   CAR.LEXUS_IS: ToyotaCarInfo("Lexus IS 2017-19"),
   CAR.LEXUS_IS_TSS2: ToyotaCarInfo("Lexus IS 2022-23"),
+  CAR.LEXUS_IS500_TSS2: ToyotaCarInfo("Lexus IS500 2022-23"),
   CAR.LEXUS_NX: ToyotaCarInfo("Lexus NX 2018-19"),
   CAR.LEXUS_NXH: ToyotaCarInfo("Lexus NX Hybrid 2018-19"),
   CAR.LEXUS_NX_TSS2: ToyotaCarInfo("Lexus NX 2020-21"),
@@ -1300,12 +1302,14 @@ FW_VERSIONS = {
       b'\x0232480000\x00\x00\x00\x00\x00\x00\x00\x00A4701000\x00\x00\x00\x00\x00\x00\x00\x00',
       b'\x02353P7000\x00\x00\x00\x00\x00\x00\x00\x00530J5000\x00\x00\x00\x00\x00\x00\x00\x00',
       b'\x02353P9000\x00\x00\x00\x00\x00\x00\x00\x00553C1000\x00\x00\x00\x00\x00\x00\x00\x00',
+      b'\x02353U0000\x00\x00\x00\x00\x00\x00\x00\x0052422000\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
     (Ecu.abs, 0x7b0, None): [
       b'F152653300\x00\x00\x00\x00\x00\x00',
       b'F152653301\x00\x00\x00\x00\x00\x00',
       b'F152653310\x00\x00\x00\x00\x00\x00',
       b'F152653330\x00\x00\x00\x00\x00\x00',
+      b'\x01F15265343000\x00\x00\x00\x00',
     ],
     (Ecu.dsu, 0x791, None): [
       b'881515306200\x00\x00\x00\x00',
@@ -1319,16 +1323,19 @@ FW_VERSIONS = {
       b'8965B53280\x00\x00\x00\x00\x00\x00',
       b'8965B53281\x00\x00\x00\x00\x00\x00',
       b'8965B53311\x00\x00\x00\x00\x00\x00',
+      b'8965B53800\x00\x00\x00\x00\x00\x00',
     ],
     (Ecu.fwdRadar, 0x750, 0xf): [
       b'8821F4702300\x00\x00\x00\x00',
       b'8821F4702100\x00\x00\x00\x00',
+      b'\x018821F6201300\x00\x00\x00\x00',
     ],
     (Ecu.fwdCamera, 0x750, 0x6d): [
       b'8646F5301101\x00\x00\x00\x00',
       b'8646F5301200\x00\x00\x00\x00',
       b'8646F5301300\x00\x00\x00\x00',
       b'8646F5301400\x00\x00\x00\x00',
+      b'\x028646F5303400\x00\x00\x00\x008646G3304000\x00\x00\x00\x00',
     ],
   },
   CAR.LEXUS_IS_TSS2: {
@@ -1352,6 +1359,9 @@ FW_VERSIONS = {
       b'\x028646F5303400\x00\x00\x00\x008646G3304000\x00\x00\x00\x00',
     ],
   },
+  CAR.LEXUS_IS500_TSS2: [
+
+  ],
   CAR.PRIUS: {
     (Ecu.engine, 0x700, None): [
       b'\x02896634761000\x00\x00\x00\x008966A4703000\x00\x00\x00\x00',
